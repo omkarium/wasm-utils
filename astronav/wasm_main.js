@@ -1,4 +1,4 @@
-import init, { get_local_sun_info, get_local_star_infos, get_time_related } from "/pkg/wasm_utils.js";
+import init, { get_local_sun_info, get_local_star_infos, get_time_related } from "../pkg/wasm_utils.js";
 init();
 
 
