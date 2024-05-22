@@ -1,0 +1,29 @@
+{
+  "name": "wasm-utils",
+  "collaborators": [
+    "Venkatesh Omkaram"
+  ],
+  "description": "A bunch of wasm utils made for the browser",
+  "version": "0.1.0",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/omkarium/wasm-utils"
+  },
+  "files": [
+    "wasm_utils_bg.wasm",
+    "wasm_utils.js",
+    "wasm_utils.d.ts",
+    "LICENSE-APACHE"
+  ],
+  "module": "wasm_utils.js",
+  "homepage": "https://github.com/omkarium/wasm-utils",
+  "types": "wasm_utils.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ],
+  "keywords": [
+    "astronomy",
+    "utility"
+  ]
+}
