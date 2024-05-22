@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="text/javascript"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=9">
+  <meta name="author" content="Venkatesh Omkaram">
+  <link rel="alternate" hreflang="x-default" href="https://omkarium.github.io/">
+  <link rel="alternate" hreflang="en" href="https://omkarium.github.io/">
+  <meta name="msapplication-TileColor" content="#2b5797">
+  <meta name="description" content="Track the Sun and the Stars">
+  <link rel="canonical" href="https://omkarium.github.io/">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="omkarium.github.io - Celestial Tracker>
+  <meta property="og:description" content="Track the Sun and the Stars">
+  <meta property="og:url" content="https://omkarium.github.io/">
+  <meta property="og:site_name" content="Omkarium">
+  <link rel="stylesheet" href="/astronav/styles/main.css">
+  <title>Celestial body tracker</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 400px;
+      border: 2px solid #ddd;
+      margin: auto;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 8px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    td {
+      background-color: #f2f2f2;
+    }
+
+    tr:hover {
+      background-color: #f2f2f2;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <p class="title"><u>Track the Sun and the Stars</u></p>
+    <p class="title-2">by Omkaram</p>
+
+    <div class="toggle-message">
+      <div class="toggle-outer">
+        <div class="toggle-inner">
+          <input type="checkbox" id="toggle">
+        </div>
+      </div>
+      <label id="toggleLabel" for="toggle">
+        Toggle for Stars
+      </label>
+    </div>
+    <div id="star-id">
+      <p class="title-3">Get a Star's data at a given time and Location</p>
+      <div id="result-star">
+        <div class="inputs">
+          <input name="year" id="year-star" type="text" class="small-input" placeholder="Enter year" />
+          <input name="month" id="month-star" type="text" class="small-input" placeholder="Enter month" />
+          <input name="day" id="day-star" type="text" class="small-input" placeholder="Enter day" />
+          <input name="ra" id="ra-star" type="text" class="small-input"
+            placeholder="Enter Right Ascension of the Star in HH:MM:SS" />
+          <input name="dec" id="dec-star" type="text" class="small-input"
+            placeholder="Enter Declination of the Star in DD:MM:SS" />
+        </div>
+        <div class="inputs">
+          <input name="hour" id="hour-star" type="text" class="small-input" placeholder="Enter Time in HH:MM:SS" />
+          <input name="timezone" id="timezone-star" type="text" class="small-input"
+            placeholder="Enter timezone in decimal hours" />
+          <input name="latitude" id="latitude-star" type="text" class="small-input"
+            placeholder="Enter latitude in DD:MM:SS" />
+          <input name="longitude" id="longitude-star" type="text" class="small-input"
+            placeholder="Enter longitude in DD:MM:SS" />
+        </div>
+
+      </div>
+
+      <div class="button-container">
+        <button type="button" id="execute-star" value="Execute">Get Data</button>
+        <button type="button" id="start-tracking-star" value="Execute">Start tracking</button>
+        <button type="button" id="stop-tracking-star" value="Execute">Stop tracking</button>
+      </div>
+      <textarea name="output-star" id="output-star" class="large-input-star" placeholder="Result"></textarea>
+
+      <br><br><br>
+      <hr style="border-width: 4px 0 0 0;border-color: #fff;/*! margin: 0; */" />
+      <p class="title-3">Tracking some popular stars now</p>
+      <table id="starTable">
+        <thead>
+          <tr>
+            <th>Star</th>
+            <th>Altitude</th>
+            <th>Azimuth</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Star information will be dynamically added here -->
+        </tbody>
+      </table>
+    </div>
+
+
+    <div id="sun-id">
+      <p class="title-3">Get the Sun's data at a given time and Location</p>
+      <div id="result2">
+        <div class="inputs">
+          <input name="year" id="year" type="text" class="small-input" placeholder="Enter year" />
+          <input name="month" id="month" type="text" class="small-input" placeholder="Enter month" />
+          <input name="day" id="day" type="text" class="small-input" placeholder="Enter day" />
+          <input name="longitude" id="longitude" type="text" class="small-input" placeholder="Enter longitude" />
+          <input name="latitude" id="latitude" type="text" class="small-input" placeholder="Enter latitude" />
+        </div>
+        <div class="inputs">
+          <input name="hour" id="hour" type="text" class="small-input" placeholder="Enter hour" />
+          <input name="minute" id="minute" type="text" class="small-input" placeholder="Enter minute" />
+          <input name="second" id="second" type="text" class="small-input" placeholder="Enter second" />
+          <input name="timezone" id="timezone" type="text" class="small-input"
+            placeholder="Enter timezone in decimal hours" />
+        </div>
+
+      </div>
+      <div class="button-container">
+        <button type="button" id="execute" value="Execute">Get Data</button>
+      </div>
+      <textarea name="output2" id="output2" class="large-input" placeholder="Result"></textarea>
+
+      <br><br><br>
+      <hr style="border-width: 4px 0 0 0;border-color: #fff;/*! margin: 0; */" />
+      <br>
+      <p class="title-3">Track the Sun now</p>
+      <div id="result3">
+        <div class="inputs">
+          <input name="latitude-2" id="latitude-2" type="text" class="small-input" placeholder="Enter latitude" />
+          <input name="longitude-2" id="longitude-2" type="text" class="small-input" placeholder="Enter longitude" />
+        </div>
+
+      </div>
+      <div class="button-container">
+        <button type="button" id="start-tracking" value="Execute">Start tracking</button>
+        <button type="button" id="stop-tracking" value="Execute">Stop tracking</button>
+
+      </div>
+      <textarea name="output2" id="output-2" class="large-input" placeholder="Result"></textarea>
+
+    </div>
+
+    <br>
+    <br>
+    <p class="heading-1">Tracking the Sun</p>
+    <p>
+      To find the position of the Sun in the sky at a point in time and place, you need to pass year, date, local time,
+      latitude, longitude and the timezone of
+      the location.
+    </p>
+    <p>
+      To track the position of the sun at the current time, you only need the latitude and the longitude. For the
+      current date, time and the timezone the program automatically figures out that info based on your system datetime.
+    </p>
+    <p class="heading-1">Tracking a Star</p>
+    <p>
+      Similar to how you find the position of the sun at a point in time and place. Click on the toggle button on the
+      top to switch to find the position of Stars.
+      You need to pass the year, date, local time, latitude, longitude, timezone, Right Ascension of the Star and the
+      Declination of the Star.
+    </p>
+    <p>
+      The Result will be the Altitude and the Azimuth of the Star. You can also choose to track it continuously for the
+      current datetime of your machine.
+    </p>
+    <br>
+    <footer class="footer">
+      <div style="text-align: center;">
+        <p>Copyright © 2024 All Rights Reserved - Omkaram Venkatesh.</p>
+      </div>
+    </footer>
+  </div>
+
+
+  <script type="module" src="/astronav/wasm_main.js"></script>
+  <script>
+    $(document).ready(() => {
+      $('.toggle-outer').click(function () {
+        $(this).toggleClass('checked');
+        const res = $('#star-id');
+        const res2 = $('#sun-id');
+
+        if (res.css('display') === 'none') {
+          res.show(300);
+          res2.hide(300);
+          $('#toggle').attr('checked', true);
+          $('#toggleLabel').text('Toggle for the Sun');
+        }
+        else {
+          res.hide(300);
+          res2.show(300);
+          $('#toggle').attr('checked', false);
+          $('#toggleLabel').text('Toggle for Stars')
+        }
+
+      })
+    });
+  </script>
+</body>
+
+</html>

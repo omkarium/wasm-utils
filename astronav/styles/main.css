@@ -1,0 +1,322 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #8c8c9b; /* Light blue-gray */
+    margin: 0;
+    padding: 0;
+}
+.wrapper {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #193d48; /* White */
+    border-top: 5px solid #e3cbcb;
+    border-bottom: 2px solid #e8e8e8;
+}
+.large-input {
+    width: 90%;
+    padding-left: 184px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 10px;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    resize: vertical;
+    min-height: 369px;
+    padding-top: 13px;
+    margin-left: 39px;
+    background: antiquewhite;
+}
+ol {
+    font: 400 16px/1.75 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-weight: 400;
+  color: rgb(236, 236, 236);
+}
+
+.large-input-star {
+    width: 90%;
+    padding-left: 184px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 10px;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    resize: vertical;
+    min-height: 96px;
+    padding-top: 13px;
+    margin-left: 39px;
+    background: antiquewhite;
+}
+.small-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    overflow-y: scroll;
+    overflow-x: scroll;
+}
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+}
+button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+button:hover {
+    background-color: #45a049; /* Darker green */
+}
+#output {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 10px;
+    overflow-y: auto;
+    resize: vertical;
+    height: 169px;
+}
+select {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+.inputs {
+    display: block;
+    width: 50%;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 10px;
+    padding: 20px;
+    margin: auto;
+}
+
+
+
+.output-copy-button {
+  border: 2px solid;
+  border-top-color: currentcolor;
+  border-right-color: currentcolor;
+  border-bottom-color: currentcolor;
+  border-left-color: currentcolor;
+  border-radius: 3px 3px 0px 0px;
+  display: block;
+  margin-left: auto;
+  margin-right: 0;
+  margin-bottom: -2px;
+  padding: 3px 8px;
+  font-size: 0.8em;
+}
+
+.title {
+  font-family: Arial, sans-serif;
+  color: #bddbd5ed;
+  font-size: 30px;
+  text-align: center;
+  text-decoration: cadetblue;
+  font-stretch: semi-expanded;
+  font-weight: bold;
+}
+
+.title-2 {
+    font-family: revert;
+    color: #d2adad;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: cadetblue;
+    font-stretch: semi-expanded;
+  }
+
+.title-3 {
+    font-family: initial;
+    color: #ccc;
+    font-size: 15px;
+    text-align: center;
+}
+
+.heading-1 {
+    font-family: Arial, sans-serif;
+    color: bisque;
+    font-size: 20px;
+    text-align: left;
+    text-decoration: cadetblue;
+    font-stretch: semi-expanded;
+    font-weight: bold;
+  }
+
+.title-img {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 90px;
+}
+
+p {
+    font: 400 16px/1.75 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color: rgb(236, 236, 236);
+    text-align: left;
+    text-decoration: cadetblue;
+    font-weight: bold;
+  }
+
+
+.footer p {
+    font: 400 16px/1.75 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    color: rgb(255, 124, 124);
+    text-align: center;
+    text-decoration: cadetblue;
+    font-weight: bold;
+}
+
+
+.toggle-message {
+    display: flex;
+    justify-content: center;
+}
+
+.toggle-outer{
+    height: 20px;
+    width: 50px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    background-color: #4caf50;
+    position: relative;
+    transition: all 0.3s ease-in;
+    cursor: pointer;
+}
+
+.toggle-outer.checked{
+    background-color: #bf5757;
+}
+
+.toggle-inner{
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    position: absolute;
+    left: 0;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease-in;
+}
+
+.toggle-outer.checked .toggle-inner{
+    left: 30px;
+}
+
+input[type="checkbox"]{
+    display: none;
+}
+
+#toggleLabel{
+    cursor: pointer;
+    color: antiquewhite;
+    padding-left: 10px;
+}
+
+#result{
+    display: none;
+}
+
+#result2{
+    display: flex;
+}
+
+#result-star{
+    display: flex;
+}
+
+#star-id{
+    display: none;
+}
+
+#sun-id{
+    display: block;
+}
+
+
+
+@media only screen and (max-width: 900px){
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    white-space:pre-line;  
+    position:relative;
+    top:-7px;
+    
+    }
+    ::-moz-placeholder { /* Firefox 19+ */
+        white-space:pre-line;  
+    position:relative;
+    top:-7px;
+    }
+    :-ms-input-placeholder { /* IE 10+ */
+        white-space:pre-line;  
+    position:relative;
+    top:-7px;
+    }
+    :-moz-placeholder { /* Firefox 18- */
+        white-space:pre-line;  
+    position:relative;
+    top:-7px;
+    }
+.title-img {
+    width: 85px;
+    height: 85px;
+    position: absolute;
+    top: 186px;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 20px;
+    display: grid;
+}
+
+button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin: 10px;
+}
+
+.large-input {
+    margin-left: 21px;
+    padding-left: 70px;
+  }
+
+.large-input-star {
+    margin-left: 21px;
+    padding-left: 70px;
+  }
+
+  .inputs {
+  margin: auto;
+  
+  }
+
+  table {
+    width: 352px;
+  }
+}
+
+
+

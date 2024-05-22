@@ -1,0 +1,32 @@
+[package]
+name = "wasm-utils"
+version = "0.1.0"
+edition = "2021"
+description = "A bunch of wasm utils made for the browser"
+authors = ["Venkatesh Omkaram"]
+notices = ["Copyright (c) 2024 Venkatesh Omkaram"]
+license = "Apache-2.0"
+repository = "https://github.com/omkarium/wasm-utils"
+homepage = "https://github.com/omkarium/wasm-utils"
+readme = "README.md"
+keywords = ["astronomy", "encryption", "utility"]
+categories = ["science"]
+
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+wasm-bindgen = "0.2"
+
+astronav = { git = "https://github.com/omkarium/astronav", features = ["noaa-sun"]}
+# astronav = {version = "0.2.4", features = ["noaa-sun"]}
+web-sys = { version = "0.3.69", features = ["console"] }
+
+
+[profile.release]
+opt-level = 'z'
+lto = true
+codegen-units = 1
+panic = 'abort'
+strip = true
