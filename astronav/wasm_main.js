@@ -1,4 +1,4 @@
-import init, { get_local_sun_info, get_local_star_infos, get_time_related } from "/wasm-utils/pkg/wasm_utils.js";
+import init, { get_local_sun_info, get_local_star_infos, get_time_related } from "../pkg/wasm_utils.js";
 init();
 
 
@@ -43,10 +43,13 @@ document.querySelector('#start-tracking-star').addEventListener("click", () => {
   if (intervalId) {
     clearInterval(intervalId); // Clear any previous interval to prevent multiple intervals running simultaneously
   }
+  if (intervalIdStar) {
+    clearInterval(intervalIdStar); // Clear any previous interval to prevent multiple intervals running simultaneously
+  }
   LoopUpdateStarInfo(); // Update immediately on click
   updateStarTable();
   intervalId = setInterval(LoopUpdateStarInfo, 1000); // Update every 1 second
-  intervalId = setInterval(updateStarTable, 1000); // Update every 1 second
+  intervalIdStar = setInterval(updateStarTable, 1000); // Update every 1 second
 
 });
 
@@ -128,6 +131,11 @@ document.querySelector('#stop-tracking-star').addEventListener("click", () => {
   if (intervalId) {
     clearInterval(intervalId); // Clear the interval to stop updates
     intervalId = null;
+  }
+  
+  if (intervalIdStar) {
+    clearInterval(intervalIdStar); // Clear the interval to stop updates
+    intervalIdStar = null;
   }
 });
 
@@ -232,6 +240,8 @@ document.querySelector('#execute').addEventListener("click", () => {
 let raw_output_bytes_two;
 let formattedText_two = "";
 let intervalId;
+let intervalIdStar;
+
 var datetime;
 
 function updateSunInfo() {
