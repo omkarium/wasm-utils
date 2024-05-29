@@ -77,7 +77,7 @@ pub fn get_local_sun_info(
         deg_to_dms(local_sun.azimuth_in_deg() as f32),
         deg_to_dms(local_sun.zenith_in_deg() as f32),
         deg_to_hms(local_sun.ha_in_deg() as f32),
-        deg_to_dms(local_sun.alt_true_declination() as f32),
+        deg_to_dms(local_sun.declination() as f32),
         deg_to_hms(local_sun.ra_in_deg() as f32),
         hours_to_hms(local_sun.sunrise_time_hours() as f32),
         hours_to_hms(local_sun.sunset_time_hours() as f32),
